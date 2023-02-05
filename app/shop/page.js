@@ -16,8 +16,8 @@ export default function ShopPage() {
             <Image
               src={`/images/${item.type}-${item.id}.jpg`}
               alt={item.type}
-              width="200"
-              height="200"
+              width="160"
+              height="160"
             />
             <h3>{item.name}</h3>
             <h2>{item.price}</h2></Link>

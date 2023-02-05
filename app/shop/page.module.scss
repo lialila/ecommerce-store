@@ -12,22 +12,36 @@
     //    margin: 5px;
   }
   Image {
-    max-width: 20px;
+    max-width: 12px;
   }
   ul {
     width: 80%;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 0;
+    margin: 0;
   }
 }
 
 .card {
   border: solid 1px black;
-  max-width: 250px;
+  //max-width: 18vw;
+  width: 36%;
   display: flex;
   justify-content: center;
 }
 
 .h1 {
+  padding-bottom: 5vw;
+  border-bottom: solid 2px black;
+  text-align: center;
+  font-family: 'Questrial', sans-serif;
+  font-weight: 700;
+  color: white;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  font-size: 11vw;
+  line-height: 49px;
+  letter-spacing: 4.6vw;
+  margin-top: 5vw;
+  margin-bottom: 0;
 }
