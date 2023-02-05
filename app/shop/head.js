@@ -2,7 +2,9 @@ export default function ShopHead() {
   // this may change in the future
   return (
     <>
-      <title>Shop</title>
+      <title>
+        <h1>SHOP</h1>
+      </title>
     </>
   );
 }

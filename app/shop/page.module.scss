@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  h2,
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.3vw;
+    // font-size: 12px;
+    letter-spacing: 0.2vw;
+    //    margin: 5px;
+  }
+  Image {
+    max-width: 20px;
+  }
+  ul {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+}
+
+.card {
+  border: solid 1px black;
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.h1 {
+}

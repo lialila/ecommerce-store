@@ -1,27 +1,30 @@
 import Image from 'next/image';
 import Link from 'next/Link';
 import { shop } from '../../database/shop';
+import styles from './page.module.scss';
 
 export default function ShopPage() {
   return(
     <>
-      <h1>SHOP</h1>
-      <main>
+      <h1 className={styles.h1}>SHOP</h1>
+      <main className={styles.main}>
+        <ul>
         {shop.map((item) => {
           return (
-          <div key={item.id}>
-            <Link href={`/shop/${item.type}-${item.id}`}>
+            <li key={item.id} className={styles.card}>
+            <Link href={`/shop/${item.type}`}>
             <Image
               src={`/images/${item.type}-${item.id}.jpg`}
               alt={item.type}
               width="200"
               height="200"
             />
-            <h3>{item.brand}</h3>
-            <h2>{item.name}</h2></Link>
-          </div>
+            <h3>{item.name}</h3>
+            <h2>{item.price}</h2></Link>
+          </li>
           );
         })}
+        </ul>
       </main>
     </>,
   );

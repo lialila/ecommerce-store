@@ -1,3 +1,7 @@
 export default function ShopPage() {
-  return <main>Contact us</main>;
+  return (
+    <main>
+      <h1>CONTACT US</h1>
+    </main>
+  );
 }
