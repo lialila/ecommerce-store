@@ -1,27 +1,52 @@
-.body {
+.html {
   // opacity: 70%;
-  width: 1447px;
+  width: 100%;
   margin: 0px;
-  background-image: url('/hikingcut.jpg');
+  background-color: #c1121f;
   background-size: cover;
-  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  a,
+  a:link,
+  a:visited {
+    color: #black;
+    text-decoration: none;
+  }
+}
+.body {
+  width: 80%;
+  border-radius: 17px;
+  background-color: white;
+  border-top: solid black 19px;
+  border-bottom: solid black 19px;
+
+  margin: 30px 30px;
+
+  button {
+    border: solid black 1px;
+  }
 }
 .h1 {
-  align-items: center;
   font-family: 'Questrial', sans-serif;
-  font-weight: 400;
-  font-size: 48px;
+  font-weight: 700;
+  font-size: 3em;
   line-height: 49px;
+  letter-spacing: 5px;
+  margin-top: 0px;
+  // border-top-right-radius: 0;
+  // border-top-left-radius: ;
   // font-border: 1px solid #000000;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .header {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: solid 2px black;
+
   nav {
-    // background-color: white;
-    margin: 20px 0;
-    padding: 15px;
-    display: flex;
+    font-weight: 400;
+    font-size: 0.7em;
     justify-content: center;
+    margin: 5px;
 
     & a + a,
     span + a {
@@ -36,10 +61,11 @@
 }
 
 .footer {
-  background-color: #ddd;
-  border-radius: 6px;
-  margin: 20px 0;
+  border-top: solid black 2px;
   display: flex;
-  padding: 15px;
-  border-top: 2px solid var(--main-bg-color);
+  justify-content: center;
+  font-weight: 400;
+  font-size: 1.2vw;
+  letter-spacing: 1.5vw;
+  padding: 5px;
 }
