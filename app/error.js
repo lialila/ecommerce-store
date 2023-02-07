@@ -1,7 +1,7 @@
 'use client';
 
 export default function RootError({ error, reset }) {
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       OOPS! SOMETHING WENT WRONG

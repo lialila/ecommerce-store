@@ -15,17 +15,19 @@
     max-width: 12px;
   }
   ul {
-    width: 80%;
+    // width: 80%;
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
+    margin: auto;
+    padding: 0;
   }
 }
 
 .card {
-  border: solid 1px black;
+  border: solid 2px black;
   //max-width: 18vw;
-  width: 36%;
+  margin: auto;
+  width: 30%;
   display: flex;
   justify-content: center;
 }
