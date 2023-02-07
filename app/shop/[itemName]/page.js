@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { shop } from '../../../database/shop';
 import styles from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
 export default function ItemNamePage(props) {
   const singleItem = shop.find((singleItem) => {
     return singleItem.type === props.params.itemName;
@@ -23,9 +24,8 @@ export default function ItemNamePage(props) {
         />
       </div>
       <div className={styles.itemText}>
-        <h1>{singleItem.name}</h1>
+        <h1>{singleItem.name} 10 seeds</h1>
         <h2>{singleItem.shu}</h2>
-        <p>{singleItem.description}</p>
       </div>
     </main>
   );

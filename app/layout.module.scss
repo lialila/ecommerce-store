@@ -4,7 +4,7 @@
   margin: 0px;
   // background-color: #c1121f;
   // background-color: #f8cfd2;
-  background-image: url('/background9.jpg');
+  background-image: url('/background6.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -17,7 +17,7 @@
 }
 .body {
   // position: fixed;
-  width: 80%;
+  width: 92%;
   height: 92%;
   border-radius: 17px;
   background-color: white;
@@ -25,7 +25,7 @@
   border-bottom: solid black 19px;
   border-right: solid black 2px;
   border-left: solid black 2px;
-  margin: 6vw 2vw;
+  margin: 4vw 4vw;
 
   button {
     border: solid black 1px;
@@ -35,9 +35,10 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   color: black;
-  font-size: 2.5vw;
+  font-size: 1.5vw;
+  // font-size: 2.5vw;
   line-height: 30px;
-  letter-spacing: 4vw;
+  letter-spacing: 5.2vw;
   margin: -0.3 vw;
   text-align: center;
 }
@@ -49,8 +50,8 @@
 
   nav {
     font-weight: 400;
-    font-size: 1.3vw;
-    // font-size: 12px;
+    // font-size: 1.3vw;
+    font-size: 12px;
     letter-spacing: 0.2vw;
 
     margin: 5px;
@@ -72,7 +73,7 @@
   display: flex;
   justify-content: center;
   font-weight: 400;
-  font-size: 1.2vw;
+  font-size: 13px;
   letter-spacing: 1.5vw;
   padding: 5px;
 }
