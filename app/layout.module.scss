@@ -4,7 +4,7 @@
   margin: 0px;
   // background-color: #c1121f;
   // background-color: #f8cfd2;
-  background-image: url('/background6.jpg');
+  background-image: url('/background11.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -18,13 +18,14 @@
 .body {
   // position: fixed;
   width: 92%;
+  max-width: 1180px;
   height: 92%;
   border-radius: 17px;
   background-color: white;
   border-top: solid black 19px;
   border-bottom: solid black 19px;
-  border-right: solid black 2px;
-  border-left: solid black 2px;
+  border-right: solid black 1.2px;
+  border-left: solid black 1.2px;
   margin: 4vw 4vw;
 
   button {
@@ -45,8 +46,8 @@
 .header {
   display: flex;
 
-  border-bottom: solid 2px black;
-  border-top: solid 2px black;
+  border-bottom: solid 1.2px black;
+  border-top: solid 1.2px black;
 
   nav {
     font-weight: 400;
@@ -69,7 +70,7 @@
 }
 
 .footer {
-  border-top: solid black 2px;
+  border-top: solid black 1.2px;
   display: flex;
   justify-content: center;
   font-weight: 400;

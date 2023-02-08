@@ -1,7 +1,5 @@
 // to set items to local storage
 
-//more robust way to get items to local storage
-
 export function getLocalStorage(key) {
   try {
     return JSON.parse(window.localStorage.getItem(key));
@@ -9,6 +7,8 @@ export function getLocalStorage(key) {
     return undefined;
   }
 }
+
+//more robust way to get items to local storage
 
 export function setLocalStorage(key, value) {
   //if we are in the browser

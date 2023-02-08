@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { fruits } from '../../database/fruits';
 
-export default function ItemsPAge() {
+export const dynamic = 'force-dynamic';
+
+export default function ItemsAge(props) {
   return (
     <div>
       {fruits.map((fruit) => {
