@@ -1,10 +1,11 @@
 import './global.scss';
 import {
   Alternates,
-  Dafoe,
+  Cutive_Mono,
   Monoton,
   Montserrat,
-  Mr,
+  Mr_Dafoe,
+  Mrs_Saint_Delafield,
   Questrial,
 } from '@next/font/google';
 import Link from 'next/link';

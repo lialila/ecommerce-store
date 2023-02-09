@@ -8,7 +8,8 @@ export function getParsedCookie(key) {
     return undefined;
   }
   try {
-    return JSON.parse(cookieValue); //should be a string
+    return JSON.parse(cookieValue);
+    //should be a string
   } catch (error) {
     return undefined;
   }

@@ -1,3 +1,4 @@
+import { Alternates, Monoton, Montserrat, Questrial } from '@next/font/google';
 import Image from 'next/image';
 import Link from 'next/Link';
 import { shop } from '../../database/shop';
@@ -13,11 +14,11 @@ export default function ShopPage() {
           return (
             <li key={item.id} className={styles.card}>
             <Link href={`/shop/${item.type}`}>
-            <Image
+            <Image className={styles.img}
               src={`/images/${item.type}-${item.id}.jpg`}
               alt={item.type}
-              width="160"
-              height="160"
+              width="140"
+              height="140"
             />
             <h3>{item.name}</h3>
             <h2>{item.price}</h2></Link>

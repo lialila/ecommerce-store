@@ -11,9 +11,7 @@
     letter-spacing: 0.2vw;
     //    margin: 5px;
   }
-  Image {
-    max-width: 12px;
-  }
+
   ul {
     // width: 80%;
     display: flex;
@@ -26,14 +24,21 @@
 .card {
   opacity: 100%;
   background-color: white;
-  border: solid 1.2px black;
+  // border: solid 1.2px black;
   //max-width: 18vw;
   margin: 15px;
   width: 27%;
   height: 30%;
   display: flex;
   justify-content: center;
-  align-content: center;
+  text-align: center;
+  // border-radius: 50%;
+  // box-shadow: 7px 7px 7px #626b79, -7px 7px 7px #626b79;
+  border: solid 1.2px black;
+  h3,
+  h2 {
+    //border: solid 1.2px black;
+  }
 }
 .card:hover {
   box-shadow: 7px 7px 7px #626b79, -7px 7px 7px #626b79;
@@ -42,16 +47,20 @@
 
 .h1 {
   padding-bottom: 5vw;
+  text-align: center;
   border-bottom: solid 1.2px black;
-  text-align: left;
-  font-family: 'Mr Dafoe', sans-serif;
-  font-weight: 700;
-  color: #8d99ae;
-  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
-    -1px -1px 0 #000;
+  font-family: 'Monoton', sans-serif;
+  font-weight: 400;
+  //color: rgba(185, 179, 179, 0);
+  // text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+  // -1px -1px 0 #000;
   font-size: 13vw;
   line-height: 49px;
   letter-spacing: 4.6vw;
   margin-top: 5vw;
   margin-bottom: 0;
+}
+.img {
+  //max-width: 12px;
+  border-radius: 50%;
 }

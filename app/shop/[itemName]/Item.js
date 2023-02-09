@@ -1,6 +1,6 @@
 'use client';
-
 import Image from 'next/image';
+import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 
 // import styles from './page.module.scss';
 
@@ -18,10 +18,58 @@ export default function Item(props) {
       <div>{props.item.shu}</div>
       <div>10 seeds {props.item.price}</div>
       <div>
-        <button>-</button>
-        <button>+</button>
+        <button
+          onClick={() => {
+            //get the cookie
+            const itemsInCookies = getParsedCookie('itemsCookie');
 
-        <button>Add to card</button>
+            //if there is no cookie, do nothing
+            if (!itemsInCookies) {
+              return;
+            }
+            const foundItem = itemsInCookies.find((itemInCookie) => {
+              return itemInCookie.id === props.item.id;
+            });
+            // if the item is inside the cookie
+            if (foundItem) {
+              foundItem.amount--;
+              if (foundItem.amount < 0) {
+                foundItem.amount = 0;
+              }
+              setStringifiedCookie('itemsCookie', itemsInCookies);
+            }
+          }}
+        >
+          -
+        </button>
+        <button
+          onClick={() => {
+            //get the cookie
+            const itemsInCookies = getParsedCookie('itemsCookie');
+
+            //if there is no cookie, do nothing
+            if (!itemsInCookies) {
+              setStringifiedCookie('itemsCookie', [
+                { id: props.item.id, amount: 1 },
+              ]);
+              return;
+            }
+            const foundItem = itemsInCookies.find((itemInCookie) => {
+              return itemInCookie.id === props.item.id;
+            });
+            // if the item is inside the cookie
+            if (foundItem) {
+              foundItem.amount++;
+            } else {
+              itemsInCookies.push({ id: props.item.id, amount: 1 });
+            }
+
+            setStringifiedCookie('itemsCookie', itemsInCookies);
+          }}
+        >
+          +
+        </button>
+        <button>Add to cart</button>
       </div>
     </>
   );

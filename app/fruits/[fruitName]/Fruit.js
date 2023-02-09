@@ -10,37 +10,64 @@ export default function Fruit(props) {
         {props.fruit.id}
         {props.fruit.name}
       </div>
-      <button>-</button>
       <button
         onClick={() => {
+          // get the cookie
           const fruitsInCookies = getParsedCookie('fruitsCookie');
-          // 1.cookie doesn;t exist
+
+          //if there is no cookie, we do nothing, we just return
+          if (!fruitsInCookies) {
+            return;
+          }
+          const foundFruit = fruitsInCookies.find((fruitInCookie) => {
+            return fruitInCookie.id === props.fruit.id;
+          });
+
+          // my fruit is inside of the cookie
+          if (foundFruit) {
+            foundFruit.amount--;
+            if (foundFruit.amount < 0) {
+              foundFruit.amount = 0;
+            }
+            // my fruit is not inside of the cookie - do nothing,
+            // update the cookie with the new values
+            setStringifiedCookie('fruitsCookie', fruitsInCookies);
+          }
+        }}
+      >
+        -
+      </button>
+      <button
+        onClick={() => {
+          // get the cookie
+          const fruitsInCookies = getParsedCookie('fruitsCookie');
+
+          //if there is no cookie, we initialize the value with start 1
           if (!fruitsInCookies) {
             setStringifiedCookie('fruitsCookie', [
               { id: props.fruit.id, amount: 1 },
             ]);
-            //if cookie exists but the fruit is not inside of the cookie
-          } else if (
-            fruitsInCookies.find((fruitInCookie) => {
-              return fruitInCookie.id === props.fruit.id;
-            })
-          ) {
-            const foundFruit = fruitsInCookies.find((fruitInCookie) => {
-              return fruitInCookie.id === props.fruit.id;
-            });
-            foundFruit.amount++;
-            setStringifiedCookie('fruitsCookie', fruitsInCookies);
-          } else {
-            setStringifiedCookie('fruitsCookie', [
-              ...fruitsInCookies,
-              { id: props.fruit.id, stars: 1 },
-            ]);
+            //if there is no cookie, the funcion will stop here
+            return;
           }
+          const foundFruit = fruitsInCookies.find((fruitInCookie) => {
+            return fruitInCookie.id === props.fruit.id;
+          });
+
+          // my fruit is inside of the cookie
+          if (foundFruit) {
+            foundFruit.amount++;
+
+            // my fruit is not inside of the cookie
+          } else {
+            fruitsInCookies.push({ id: props.fruit.id, amount: 1 });
+          }
+
+          setStringifiedCookie('fruitsCookie', fruitsInCookies);
         }}
       >
         +
       </button>
-
       <button>Add to card</button>
     </>
   );
