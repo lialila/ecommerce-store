@@ -32,16 +32,19 @@ export default function RootLayout({ children }) {
                 {' '}
                 <Link href="/shop">SHOP</Link>
               </button>
-              <button>
-                <Link href="/fruits">FRUITS</Link>
-              </button>
+              <button>{/* <Link href="/fruits">FRUITS</Link> */}</button>
             </div>
             <div className={styles.right}>
               <button>
                 <Link href="/contact">CONTACT</Link>
               </button>
-              <button>LOGIN </button>
-              <button>MY BAG</button>
+
+              <Link href="/cart">
+                <button> YOUR CART</button>
+              </Link>
+              <Link href="/checkout">
+                <button>CHECKOUT </button>
+              </Link>
             </div>
           </nav>
         </header>

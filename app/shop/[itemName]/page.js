@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 export default function ItemNamePage({ params }) {
   //singleItem is a name, shop the name of the list of things, item is single thing from shop list, that we will use also in Item component like props.item.name, and don't forget to write (props) in the name of component!!
   const singleItem = shop.find((item) => {
-    return item.type === params.itemName;
+    return item.id.toString() === params.itemName;
   });
 
   if (!singleItem) {

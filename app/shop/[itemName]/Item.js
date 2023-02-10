@@ -1,13 +1,18 @@
 'use client';
 import Image from 'next/image';
+// import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
+
+// const [itemsQuantity, setItemsQuantity] = useState('1');
+// import { itemsWithAmount } from '../shop/page';
 
 // import styles from './page.module.scss';
 
 export default function Item(props) {
   return (
     <>
-      <Image
+      <img
+        data-test-id="product-image"
         src={`/images/${props.item.type}-${props.item.id}.jpg`}
         alt={props.item.type}
         width="160"
@@ -16,8 +21,17 @@ export default function Item(props) {
       <h1>{props.item.name}</h1>
       <div>{props.item.description}</div>
       <div>{props.item.shu}</div>
-      <div>10 seeds {props.item.price}</div>
       <div>
+        10 seeds
+        <p data-test-id="product-image">{props.item.price}</p>€
+      </div>
+      <div>
+        <label for="amount">Add product to your cart</label>
+        <input
+          value="quantity"
+          data-test-id="product-quantity"
+          // onChange={(e) => setItemsQuantity(e.target.value)}
+        />
         <button
           onClick={() => {
             //get the cookie
@@ -69,7 +83,8 @@ export default function Item(props) {
         >
           +
         </button>
-        <button>Add to cart</button>
+        <button data-test-id="product-add-to-cart">Add to card</button>
+        <h2>In your cart: {props.item.amount}</h2>
       </div>
     </>
   );

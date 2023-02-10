@@ -22,27 +22,29 @@
 }
 
 .card {
-  opacity: 100%;
+  opacity: 80%;
   background-color: white;
   // border: solid 1.2px black;
   //max-width: 18vw;
-  margin: 15px;
-  width: 27%;
-  height: 30%;
+  margin: 35px;
+  width: 23%;
+  height: 20%;
   display: flex;
   justify-content: center;
   text-align: center;
-  // border-radius: 50%;
+  border-radius: 10px;
   // box-shadow: 7px 7px 7px #626b79, -7px 7px 7px #626b79;
-  border: solid 1.2px black;
+  // border: solid 1.2px #626b79;
+  border-bottom: solid 8px #2e3033;
   h3,
   h2 {
     //border: solid 1.2px black;
   }
 }
 .card:hover {
-  box-shadow: 7px 7px 7px #626b79, -7px 7px 7px #626b79;
-  margin-top: -0.01px;
+  //margin: 2px;
+  padding: 2px;
+  box-shadow: 7px 7px 7px #445881;
 }
 
 .h1 {
