@@ -32,8 +32,10 @@
   border-radius: 17px;
   border-top: solid black 19px;
   border-bottom: solid black 19px;
-  box-shadow: 7px 7px 7px #1b263b;
   margin: 4vw 4vw;
+}
+.body:hover {
+  box-shadow: 7px 7px 7px #1b263b;
 }
 .h1 {
   font-family: 'Alternates', sans-serif;

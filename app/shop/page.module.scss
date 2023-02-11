@@ -22,11 +22,12 @@
 }
 
 .card {
-  opacity: 80%;
-  background-color: white;
-  // border: solid 1.2px black;
-  //max-width: 18vw;
-  margin: 35px;
+  backdrop-filter: blur(18.2px);
+  -webkit-backdrop-filter: blur(18.2px);
+  background: rgba(203, 198, 198, 0.7);
+
+  // padding: 8px;
+  margin: 5%;
   width: 23%;
   height: 20%;
   display: flex;
@@ -65,4 +66,5 @@
 .img {
   //max-width: 12px;
   border-radius: 50%;
+  object-fit: cover;
 }
