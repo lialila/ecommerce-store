@@ -5,32 +5,6 @@ import { shop } from '../../database/shop';
 import styles from './page.module.scss';
 
 export default function ShopPage(props) {
-  const itemsCookie = cookies().get('itemsCookie');
-
-  let itemsCookieParsed = [];
-
-  if (itemsCookie) {
-    itemsCookieParsed = JSON.parse(itemsCookie.value);
-  }
-
-  console.log('shop', shop);
-
-  //adding property 'amount' to every item
-  const itemsWithAmount = shop.map((item) => {
-    const itemWithAmount = { ...item, amount: 0 };
-
-    //read the cookie to find the item
-    const itemInCookie = itemsCookieParsed.find(
-      (itemObject) => item.type === itemObject.id,
-    );
-
-    //if find the item, update the amount
-    if (itemInCookie) {
-      itemWithAmount.amount = itemInCookie.amount;
-    }
-    return itemWithAmount;
-  });
-
   return (
     <>
       <Link href="/shop" data-test-id="products-link">
@@ -53,8 +27,7 @@ export default function ShopPage(props) {
                     height="140"
                   />
                   <h3>{item.name}</h3>
-                  <h2>{item.price}</h2>
-                  <h2>In your cart: {item.amount}</h2>
+                  <h2>{item.price} €</h2>
                 </Link>
               </li>
             );

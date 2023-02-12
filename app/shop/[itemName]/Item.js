@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 
+// itemsCookie = [{id:number, amount;number, price: number}]
+
 export default function Item(props) {
   const [itemsQuantity, setItemsQuantity] = useState(1);
 
@@ -19,7 +21,7 @@ export default function Item(props) {
       <div>{props.item.shu}</div>
       <div>
         10 seeds
-        <p data-test-id="product-image">{props.item.price}</p>€
+        <p data-test-id="product-image">{props.item.price} €</p>
       </div>
       <div>
         <form name="inputnumber">
@@ -29,7 +31,6 @@ export default function Item(props) {
             min="0"
             value={itemsQuantity}
             data-test-id="product-quantity"
-            pattern="^\+?(0|[1-9]\d*)$"
             required
             onChange={(e) => {
               setItemsQuantity(e.target.value);

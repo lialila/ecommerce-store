@@ -1,0 +1,22 @@
+.main {
+  // padding: 8px;
+  // width: 23%;
+  // height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  // box-shadow: 7px 7px 7px #626b79, -7px 7px 7px #626b79;
+  // border: solid 1.2px #626b79;
+  //  border-bottom: solid 8px #2e3033;
+}
+.product {
+  margin: 2% 15%;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: row;
+  backdrop-filter: blur(18.2px);
+  -webkit-backdrop-filter: blur(18.2px);
+  background: rgba(203, 198, 198, 0.7);
+}
