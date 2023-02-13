@@ -36,6 +36,7 @@ export default function CartPage(props) {
     (item) => item.amount > 0,
   );
 
+  //making a new array, in order to push there the prices from the itemsWithAmountOverNull
   const priceSum = [];
 
   return (
@@ -43,6 +44,8 @@ export default function CartPage(props) {
       <h1>YOUR CART</h1>
       <div className={styles.main}>
         {itemsWithAmountOverNull.map((item) => {
+          priceSum.push(item.price * item.amount);
+
           return (
             <div
               className={styles.product}
@@ -50,7 +53,7 @@ export default function CartPage(props) {
               data-test-id={`cart-product-${item.id}`}
             >
               {' '}
-              {priceSum.push(item.price * item.amount)}.<h3>{item.name}</h3>
+              <h3>{item.name}</h3>
               <div>
                 Quantity:
                 <p data-test-id={`cart-product-quantity-${item.id}`}>
@@ -60,19 +63,19 @@ export default function CartPage(props) {
                 {/* <p>Price: {item.price * item.amount}€</p> */}
                 <button
                   data-test-id={`cart-product-remove-${item.id}`}
-                  // onClick={() => {
-                  //   const itemsInCookies = getParsedCookie('itemsCookie');
+                  //   onClick={() => {
+                  //     const itemsInCookies = getParsedCookie('itemsCookie');
 
-                  //   const foundItem = itemsInCookies.find((itemInCookie) => {
-                  //     return itemInCookie.id === props.item.id;
-                  //   });
-                  //   if (foundFruit) {
-                  //     itemsInCookies.filter(
-                  //       (itemsInCookies) => itemsInCookies.id != foundFruit,
-                  //     );
-                  //     setStringifiedCookie('itemsCookie', itemsInCookies);
-                  //   }
-                  // }}
+                  //     const foundItem = itemsInCookies.find((itemInCookie) => {
+                  //       return itemInCookie.id === props.item.id;
+                  //     });
+                  //     if (foundFruit) {
+                  //       itemsInCookies.filter(
+                  //         (itemsInCookies) => itemsInCookies.id != foundFruit,
+                  //       );
+                  //       setStringifiedCookie('itemsCookie', itemsInCookies);
+                  //     }
+                  //   }}
                 >
                   Remove the product
                 </button>

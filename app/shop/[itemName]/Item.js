@@ -39,7 +39,9 @@ export default function Item(props) {
           <button
             type="submit"
             data-test-id="product-add-to-cart"
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
+
               //get the cookie
               const itemsInCookies = getParsedCookie('itemsCookie');
               console.log('getParsedCookie', itemsInCookies);
@@ -71,7 +73,7 @@ export default function Item(props) {
               } else {
                 return;
               }
-              console.log('items quantity', +itemsQuantity);
+              console.log('items quantity', itemsQuantity);
               setStringifiedCookie('itemsCookie', itemsInCookies);
             }}
           >

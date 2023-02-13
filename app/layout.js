@@ -25,9 +25,7 @@ export default function RootLayout({ children }) {
               <button>
                 <Link href="/">HOME</Link>
               </button>
-              <button>
-                <Link href="/concept">CONCEPT</Link>
-              </button>
+
               <button>
                 {' '}
                 <Link href="/shop">SHOP</Link>
@@ -35,16 +33,15 @@ export default function RootLayout({ children }) {
               <button>{/* <Link href="/fruits">FRUITS</Link> */}</button>
             </div>
             <div className={styles.right}>
-              <button>
-                <Link href="/contact">CONTACT</Link>
-              </button>
-
               <Link href="/cart">
                 <button> YOUR CART</button>
               </Link>
               <Link href="/checkout">
                 <button>CHECKOUT </button>
-              </Link>
+              </Link>{' '}
+              <button>
+                <Link href="/contact">CONTACT</Link>
+              </button>
             </div>
           </nav>
         </header>
