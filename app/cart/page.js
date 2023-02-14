@@ -1,8 +1,11 @@
 import { cookies } from 'next/headers';
+import Link from 'next/link';
 import { shop } from '../../database/shop';
 import { itemWithAmount } from '../shop/page';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
+
+// import TotalPrice from './TotalPrice';
 
 export default function CartPage(props) {
   const itemsCookie = cookies().get('itemsCookie');
@@ -73,7 +76,9 @@ export default function CartPage(props) {
       </h3>
 
       {/* should send to checkout page */}
-      <button>Checkout</button>
+      <Link href="../checkout">
+        <button>Checkout</button>
+      </Link>
     </main>
   );
 }

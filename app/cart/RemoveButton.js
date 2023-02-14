@@ -1,11 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 
 export default function RemoveButton(props) {
-  const [removeItem, setRemoveItem] = useState();
-
   const handleRemove = () => {
     let itemsInCookies = getParsedCookie('itemsCookie');
 
