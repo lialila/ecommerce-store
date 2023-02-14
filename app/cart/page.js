@@ -1,9 +1,8 @@
-// 'use client';
 import { cookies } from 'next/headers';
 import { shop } from '../../database/shop';
-import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 import { itemWithAmount } from '../shop/page';
 import styles from './page.module.scss';
+import RemoveButton from './RemoveButton';
 
 export default function CartPage(props) {
   const itemsCookie = cookies().get('itemsCookie');
@@ -60,25 +59,8 @@ export default function CartPage(props) {
                   {item.amount}
                 </p>
                 <p>Price per item: {item.price}€</p>
-                {/* <p>Price: {item.price * item.amount}€</p> */}
-                <button
-                  data-test-id={`cart-product-remove-${item.id}`}
-                  //   onClick={() => {
-                  //     const itemsInCookies = getParsedCookie('itemsCookie');
-
-                  //     const foundItem = itemsInCookies.find((itemInCookie) => {
-                  //       return itemInCookie.id === props.item.id;
-                  //     });
-                  //     if (foundFruit) {
-                  //       itemsInCookies.filter(
-                  //         (itemsInCookies) => itemsInCookies.id != foundFruit,
-                  //       );
-                  //       setStringifiedCookie('itemsCookie', itemsInCookies);
-                  //     }
-                  //   }}
-                >
-                  Remove the product
-                </button>
+                {/* <p>Price: {item.price * item.amount}€</p> */}{' '}
+                <RemoveButton item={item} />
               </div>
             </div>
           );
