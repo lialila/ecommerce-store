@@ -1,6 +1,12 @@
 'use client';
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function From(props) {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+
   return (
     <form>
       <label htmlFor="firstName">
@@ -9,7 +15,7 @@ export default function From(props) {
           data-test-id="checkout-first-name"
           value="firstName"
           required
-          // onChange={(e) => setFirstName(e.currentTarget.value)}
+          onChange={(e) => setFirstName(e.currentTarget.value)}
         />
       </label>
       <br />
@@ -18,7 +24,7 @@ export default function From(props) {
         data-test-id="checkout-last-name"
         value="lastName"
         required
-        // onChange={(e) => setLastName(e.currentTarget.value)}
+        onChange={(e) => setLastName(e.currentTarget.value)}
       />
       <br />
       <label>Enter your e-mail:</label>
@@ -27,7 +33,8 @@ export default function From(props) {
         value="e-mail"
         data-test-id="checkout-email"
         required
-      />{' '}
+        onChange={(e) => setEmail(e.currentTarget.value)}
+      />
       <br />
       <div>
         <label>Enter your adress:</label>
@@ -48,7 +55,9 @@ export default function From(props) {
         <input data-test-id="checkout-security-code" required />
       </div>
       <p>Press Enter to submit</p>
-      <button data-test-id="checkout-confirm-order">Confirm order</button>
+      <Link href="./thankyou">
+        <button data-test-id="checkout-confirm-order">Confirm order</button>
+      </Link>
     </form>
   );
 }

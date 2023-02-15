@@ -1,11 +1,10 @@
 import { cookies } from 'next/headers';
 import Link from 'next/link';
 import { shop } from '../../database/shop';
+import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 import { itemWithAmount } from '../shop/page';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
-
-// import TotalPrice from './TotalPrice';
 
 export default function CartPage(props) {
   const itemsCookie = cookies().get('itemsCookie');
@@ -54,7 +53,6 @@ export default function CartPage(props) {
               key={item.id}
               data-test-id={`cart-product-${item.id}`}
             >
-              {' '}
               <h3>{item.name}</h3>
               <div>
                 Quantity:
@@ -62,7 +60,6 @@ export default function CartPage(props) {
                   {item.amount}
                 </p>
                 <p>Price per item: {item.price}€</p>
-                {/* <p>Price: {item.price * item.amount}€</p> */}{' '}
                 <RemoveButton item={item} />
               </div>
             </div>
@@ -70,9 +67,9 @@ export default function CartPage(props) {
         })}
       </div>
       <p>Nice choice!</p>
+
       <h3>
-        Total price:
-        {priceSum.reduce((partialSum, a) => partialSum + a, 0)} €
+        Total price: {priceSum.reduce((partialSum, a) => partialSum + a, 0)} €
       </h3>
 
       {/* should send to checkout page */}

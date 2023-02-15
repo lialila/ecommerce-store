@@ -30,13 +30,18 @@ export default function RootLayout({ children }) {
               </button>
             </div>
             <div className={styles.right}>
-              <Link href="/cart">
+              {/* <Link href="/cart">
                 <button> YOUR CART</button>
-              </Link>
+              </Link> */}
 
               <button>
                 <Link href="/contact">CONTACT</Link>
               </button>
+            </div>
+            <div>
+              <Link href="/cart">
+                <button>PRODUCTS IN YOUR CART: </button>
+              </Link>
             </div>
           </nav>
         </header>

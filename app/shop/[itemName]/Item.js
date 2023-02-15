@@ -1,10 +1,13 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 
 // itemsCookie = [{id:number, amount;number, price: number}]
 
 export default function Item(props) {
+  const router = useRouter();
+
   const [itemsQuantity, setItemsQuantity] = useState(1);
 
   return (
@@ -73,11 +76,20 @@ export default function Item(props) {
               } else {
                 return;
               }
-              console.log('items quantity', itemsQuantity);
+
               setStringifiedCookie('itemsCookie', itemsInCookies);
+              router.refresh();
             }}
           >
             Add to cart
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              router.push('../cart');
+            }}
+          >
+            My Cart
           </button>
         </form>
       </div>

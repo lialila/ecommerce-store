@@ -1,9 +1,11 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 
 export default function RemoveButton(props) {
-  const handleRemove = () => {
+  const router = useRouter();
+  const handleRemove = (e) => {
     let itemsInCookies = getParsedCookie('itemsCookie');
 
     console.log(itemsInCookies);
@@ -19,11 +21,15 @@ export default function RemoveButton(props) {
       setStringifiedCookie('itemsCookie', itemsInCookies);
     }
   };
+  const handleRemoveAndRouterRefresh = (e) => {
+    handleRemove(e);
+    router.refresh(e);
+  };
 
   return (
     <button
       data-test-id={`cart-product-remove-${props.item.id}`}
-      onClick={handleRemove}
+      onClick={handleRemoveAndRouterRefresh}
     >
       Remove the product
     </button>
