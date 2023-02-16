@@ -11,6 +11,7 @@ import {
 import Link from 'next/link';
 import CookieBanner from './CookieBanner';
 import styles from './layout.module.scss';
+import TotalAmount from './TotalAmount';
 
 export default function RootLayout({ children }) {
   return (
@@ -39,9 +40,7 @@ export default function RootLayout({ children }) {
               </button>
             </div>
             <div>
-              <Link href="/cart">
-                <button>PRODUCTS IN YOUR CART: </button>
-              </Link>
+              <TotalAmount />
             </div>
           </nav>
         </header>
