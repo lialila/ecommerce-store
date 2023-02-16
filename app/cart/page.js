@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { shop } from '../../database/shop';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 import { itemWithAmount } from '../shop/page';
+import CheckoutButton from './CheckoutButton';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 
@@ -71,11 +72,8 @@ export default function CartPage(props) {
       <h3>
         Total price: {priceSum.reduce((partialSum, a) => partialSum + a, 0)} €
       </h3>
-
+      <CheckoutButton />
       {/* should send to checkout page */}
-      <Link href="../checkout">
-        <button>Checkout</button>
-      </Link>
     </main>
   );
 }
