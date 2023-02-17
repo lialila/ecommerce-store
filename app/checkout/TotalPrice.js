@@ -3,7 +3,7 @@ import { shop } from '../../database/shop';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 
 export default function TotalPrice() {
-  const itemsCookie = cookies().get('itemsCookie');
+  const itemsCookie = cookies().get('cart');
 
   let itemsCookieParsed = [];
 

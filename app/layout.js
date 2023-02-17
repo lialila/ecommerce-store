@@ -35,9 +35,9 @@ export default function RootLayout({ children }) {
                 <button> YOUR CART</button>
               </Link> */}
 
-              <button>
+              {/* <button>
                 <Link href="/contact">CONTACT</Link>
-              </button>
+              </button> */}
             </div>
             <div>
               <TotalAmount />

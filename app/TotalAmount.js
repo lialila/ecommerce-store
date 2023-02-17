@@ -4,7 +4,7 @@ import { shop } from '../database/shop';
 import { getParsedCookie, setStringifiedCookie } from '../utils/cookies';
 
 export default function TotalAmount() {
-  const itemsCookie = cookies().get('itemsCookie');
+  const itemsCookie = cookies().get('cart');
 
   let itemsCookieParsed = [];
 
@@ -43,7 +43,7 @@ export default function TotalAmount() {
   return (
     <Link href="/cart">
       <button>
-        PRODUCTS IN YOUR CART:
+        CART
         {productsAmount.reduce((partialSum, a) => partialSum + a, 0)}
       </button>
     </Link>

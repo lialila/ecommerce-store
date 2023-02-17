@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
 
-// itemsCookie = [{id:number, amount;number, price: number}]
+// cart = [{id:number, amount;number, price: number}]
 
 export default function Item(props) {
   const router = useRouter();
@@ -46,13 +46,13 @@ export default function Item(props) {
               e.preventDefault();
 
               //get the cookie
-              const itemsInCookies = getParsedCookie('itemsCookie');
+              const itemsInCookies = getParsedCookie('cart');
               console.log('getParsedCookie', itemsInCookies);
 
               // if there is no cookie, do nothing
               if (itemsQuantity * 1 !== NaN && itemsQuantity * 1 >= 0) {
                 if (!itemsInCookies) {
-                  setStringifiedCookie('itemsCookie', [
+                  setStringifiedCookie('cart', [
                     {
                       id: props.item.id,
                       amount: Math.floor(itemsQuantity * 1),
@@ -65,7 +65,6 @@ export default function Item(props) {
                 });
                 // if the item is inside the cookie
                 if (foundItem) {
-                  console.log('itemsQuantity', itemsQuantity);
                   foundItem.amount += Math.floor(itemsQuantity * 1);
                 } else {
                   itemsInCookies.push({
@@ -77,7 +76,7 @@ export default function Item(props) {
                 return;
               }
 
-              setStringifiedCookie('itemsCookie', itemsInCookies);
+              setStringifiedCookie('cart', itemsInCookies);
               router.refresh();
             }}
           >

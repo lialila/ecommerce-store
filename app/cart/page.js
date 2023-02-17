@@ -8,7 +8,7 @@ import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 
 export default function CartPage(props) {
-  const itemsCookie = cookies().get('itemsCookie');
+  const itemsCookie = cookies().get('cart');
 
   let itemsCookieParsed = [];
 
@@ -42,8 +42,8 @@ export default function CartPage(props) {
   const priceSum = [];
 
   return (
-    <main>
-      <h1>YOUR CART</h1>
+    <main className={styles.mainmain}>
+      <h1 className={styles.h1}>CART</h1>
       <div className={styles.main}>
         {itemsWithAmountOverNull.map((item) => {
           priceSum.push(item.price * item.amount);
@@ -54,9 +54,9 @@ export default function CartPage(props) {
               key={item.id}
               data-test-id={`cart-product-${item.id}`}
             >
-              <h3>{item.name}</h3>
+              <h2>{item.name}</h2>
               <div>
-                Quantity:
+                <h3>Quantity:</h3>
                 <p data-test-id={`cart-product-quantity-${item.id}`}>
                   {item.amount}
                 </p>
@@ -67,7 +67,7 @@ export default function CartPage(props) {
           );
         })}
       </div>
-      <p>Nice choice!</p>
+      <h2>Nice choice!</h2>
 
       <h3>
         Total price: {priceSum.reduce((partialSum, a) => partialSum + a, 0)} €
