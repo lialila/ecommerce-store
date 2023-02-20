@@ -1,5 +1,11 @@
 // import styles from './page.module.scss';
 
+export const metadata = {
+  title: {
+    default: 'THANK YOU!',
+  },
+};
+
 export default function ThankYouPage() {
   return (
     <main>

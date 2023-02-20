@@ -1,5 +1,11 @@
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: {
+    default: 'NINE CIRCLES',
+  },
+};
+
 export default function HomePage() {
   return (
     <main className={styles.main}>

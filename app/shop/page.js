@@ -1,10 +1,17 @@
-import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/Link';
-import { shop } from '../../database/shop';
+import { getShop } from '../../database/shop';
 import styles from './page.module.scss';
 
-export default function ShopPage(props) {
+export const metadata = {
+  title: {
+    default: 'NINE CIRCLES SHOP',
+  },
+};
+
+export default async function ShopPage(props) {
+  const shop = await getShop();
+
   return (
     <>
       <Link href="/shop" data-test-id="products-link">
@@ -16,7 +23,7 @@ export default function ShopPage(props) {
             return (
               <li key={item.id} className={styles.card}>
                 <Link
-                  href={`/shop/${item.id.toString()}`}
+                  href={`/shop/${item.id}`}
                   data-test-id={`${item.name}-${item.id}`}
                 >
                   <Image

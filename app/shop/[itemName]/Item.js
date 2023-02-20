@@ -1,13 +1,14 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+// import { getItem, shop } from '../../../database/shop';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
+import styles from './page.module.scss';
 
 // cart = [{id:number, amount;number, price: number}]
 
 export default function Item(props) {
   const router = useRouter();
-
   const [itemsQuantity, setItemsQuantity] = useState(1);
 
   return (

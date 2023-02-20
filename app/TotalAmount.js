@@ -1,9 +1,11 @@
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import { shop } from '../database/shop';
+import { getShop, shop } from '../database/shop';
 import { getParsedCookie, setStringifiedCookie } from '../utils/cookies';
 
-export default function TotalAmount() {
+export default async function TotalAmount() {
+  const shop = await getShop();
+
   const itemsCookie = cookies().get('cart');
 
   let itemsCookieParsed = [];
@@ -43,8 +45,7 @@ export default function TotalAmount() {
   return (
     <Link href="/cart">
       <button>
-        CART
-        {productsAmount.reduce((partialSum, a) => partialSum + a, 0)}
+        CART ({productsAmount.reduce((partialSum, a) => partialSum + a, 0)})
       </button>
     </Link>
   );

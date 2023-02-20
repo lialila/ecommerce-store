@@ -1,14 +1,21 @@
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import { shop } from '../../database/shop';
+import { getShop, shop } from '../../database/shop';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 import { itemWithAmount } from '../shop/page';
 import CheckoutButton from './CheckoutButton';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 
-export default function CartPage(props) {
+export const metadata = {
+  title: {
+    default: 'CART',
+  },
+};
+
+export default async function CartPage(props) {
   const itemsCookie = cookies().get('cart');
+  const shop = await getShop();
 
   let itemsCookieParsed = [];
 

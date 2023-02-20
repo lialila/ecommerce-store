@@ -1,5 +1,11 @@
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: {
+    default: 'CONTACT',
+  },
+};
+
 export default function ShopPage() {
   return (
     <main>

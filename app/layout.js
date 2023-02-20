@@ -31,13 +31,9 @@ export default function RootLayout({ children }) {
               </button>
             </div>
             <div className={styles.right}>
-              {/* <Link href="/cart">
-                <button> YOUR CART</button>
-              </Link> */}
-
-              {/* <button>
+              <button>
                 <Link href="/contact">CONTACT</Link>
-              </button> */}
+              </button>
             </div>
             <div>
               <TotalAmount />

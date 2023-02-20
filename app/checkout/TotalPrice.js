@@ -1,8 +1,8 @@
 import { cookies } from 'next/headers';
-import { shop } from '../../database/shop';
+import { getShop, shop } from '../../database/shop';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 
-export default function TotalPrice() {
+export default async function TotalPrice() {
   const itemsCookie = cookies().get('cart');
 
   let itemsCookieParsed = [];
@@ -10,6 +10,7 @@ export default function TotalPrice() {
   if (itemsCookie) {
     itemsCookieParsed = JSON.parse(itemsCookie.value);
   }
+  const shop = await getShop();
 
   console.log('shop', shop);
 
