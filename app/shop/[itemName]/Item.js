@@ -3,9 +3,8 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 // import { getItem, shop } from '../../../database/shop';
 import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
-import styles from './page.module.scss';
 
-// cart = [{id:number, amount;number, price: number}]
+// import styles from './page.module.scss';
 
 export default function Item(props) {
   const router = useRouter();
@@ -41,17 +40,16 @@ export default function Item(props) {
             }}
           />
           <button
-            type="submit"
             data-test-id="product-add-to-cart"
             onClick={(e) => {
               e.preventDefault();
 
-              //get the cookie
+              // get the cookie
               const itemsInCookies = getParsedCookie('cart');
               console.log('getParsedCookie', itemsInCookies);
 
               // if there is no cookie, do nothing
-              if (itemsQuantity * 1 !== NaN && itemsQuantity * 1 >= 0) {
+              if (!Number.isNaN(itemsQuantity * 1) && itemsQuantity * 1 >= 0) {
                 if (!itemsInCookies) {
                   setStringifiedCookie('cart', [
                     {

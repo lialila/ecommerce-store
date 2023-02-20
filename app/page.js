@@ -10,6 +10,7 @@ export default function HomePage() {
   return (
     <main className={styles.main}>
       <h1>HOME</h1>
+
       <p>
         Chili pepper plants start from seeds. Once a seed has germinated, a
         seedling will grow from it. First, the plant will produce a stem with

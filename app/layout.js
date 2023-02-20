@@ -4,8 +4,6 @@ import {
   Cutive_Mono,
   Monoton,
   Montserrat,
-  Mr_Dafoe,
-  Mrs_Saint_Delafield,
   Questrial,
 } from '@next/font/google';
 import Link from 'next/link';
@@ -19,7 +17,7 @@ export default function RootLayout({ children }) {
       <head />
       <body className={styles.body}>
         <CookieBanner />
-        <h1 className={styles.h1}>NINE CIRCLES</h1>
+        <h2 className={styles.h1}>NINE CIRCLES</h2>
         <header className={styles.header}>
           <nav>
             <div className={styles.left}>

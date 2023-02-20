@@ -32,5 +32,10 @@ yarn-error.log*
 # vercel
 .vercel
 
-.eslintcache
 *.tsbuildinfo
+next-env.d.ts
+
+.eslintcache
+playwright/test-results/
+playwright/report/
+/playwright/.cache/

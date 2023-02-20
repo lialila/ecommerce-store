@@ -1,13 +1,16 @@
 import Image from 'next/image';
-import Link from 'next/Link';
+import Link from 'next/link';
 import { getShop } from '../../database/shop';
 import styles from './page.module.scss';
 
 export const metadata = {
   title: {
     default: 'NINE CIRCLES SHOP',
+    description: 'The hottest chilis in the world',
   },
 };
+
+export const dynamic = 'force-dynamic';
 
 export default async function ShopPage(props) {
   const shop = await getShop();
@@ -24,7 +27,7 @@ export default async function ShopPage(props) {
               <li key={item.id} className={styles.card}>
                 <Link
                   href={`/shop/${item.id}`}
-                  data-test-id={`${item.name}-${item.id}`}
+                  data-test-id={`product-${item.id}`}
                 >
                   <Image
                     className={styles.img}
