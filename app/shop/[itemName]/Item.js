@@ -1,8 +1,10 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-// import { getItem, shop } from '../../../database/shop';
-import { getParsedCookie, setStringifiedCookie } from '../../../utils/cookies';
+import {
+  getParsedCookie,
+  setStringifiedCookie,
+} from '../../../utils/cookies.ts';
 
 // import styles from './page.module.scss';
 

@@ -1,11 +1,4 @@
 import './global.scss';
-import {
-  Alternates,
-  Cutive_Mono,
-  Monoton,
-  Montserrat,
-  Questrial,
-} from '@next/font/google';
 import Link from 'next/link';
 import CookieBanner from './CookieBanner';
 import styles from './layout.module.scss';

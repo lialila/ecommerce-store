@@ -59,7 +59,7 @@ import { sql } from './connect';
 //   },
 // ];
 
-type Item = {
+export type Item = {
   id: number;
   name: string;
   type: string;
@@ -67,7 +67,7 @@ type Item = {
   shu: string | null;
   description: string | null;
 };
-//get all items in shop
+// get all items in shop
 
 export const getShop = cache(async () => {
   const shop = await sql<Item[]>`
@@ -76,7 +76,7 @@ SELECT * FROM shop
   return shop;
 });
 
-//get a single item
+// get a single item
 
 export const getItem = cache(async (id: number) => {
   const [item] = await sql<Item[]>`

@@ -1,8 +1,5 @@
 import { cookies } from 'next/headers';
-import Link from 'next/link';
-import { getShop, shop } from '../../database/shop';
-import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
-import { itemWithAmount } from '../shop/page';
+import { getShop } from '../../database/shop';
 import CheckoutButton from './CheckoutButton';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
@@ -13,7 +10,7 @@ export const metadata = {
   },
 };
 
-export default async function CartPage(props) {
+export default async function CartPage() {
   const itemsCookie = cookies().get('cart');
   const shop = await getShop();
 
@@ -25,16 +22,16 @@ export default async function CartPage(props) {
 
   console.log('shop', shop);
 
-  //adding property 'amount' to every item
+  // adding property 'amount' to every item
   const itemsWithAmount = shop.map((item) => {
     const itemWithAmount = { ...item, amount: 0 };
 
-    //read the cookie to find the item
+    // read the cookie to find the item
     const itemInCookie = itemsCookieParsed.find(
       (itemObject) => item.id === itemObject.id,
     );
 
-    //if find the item, update the amount
+    // if find the item, update the amount
     if (itemInCookie) {
       itemWithAmount.amount = itemInCookie.amount;
     }
@@ -45,7 +42,7 @@ export default async function CartPage(props) {
     (item) => item.amount > 0,
   );
 
-  //making a new array, in order to push there the prices from the itemsWithAmountOverNull
+  // making a new array, in order to push there the prices from the itemsWithAmountOverNull
   const priceSum = [];
 
   return (

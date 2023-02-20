@@ -10,12 +10,12 @@ config();
 //   },
 // });
 
-//Type needed for the connection funtion below
+// Type needed for the connection funtion below
 declare module globalThis {
   let postgresSqlClient: ReturnType<typeof postgres> | undefined;
 }
 
-//Connect only once to the database
+// Connect only once to the database
 
 function connectOneTimeToDatabase() {
   if (!globalThis.postgresSqlClient) {

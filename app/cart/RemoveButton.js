@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
+import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies.ts';
 import styles from './removeButton.module.scss';
 
 export default function RemoveButton(props) {
@@ -16,7 +16,7 @@ export default function RemoveButton(props) {
 
     if (foundItem) {
       itemsInCookies = itemsInCookies.filter(
-        (itemInCookies) => itemInCookies.id != foundItem.id,
+        (itemInCookies) => itemInCookies.id !== foundItem.id,
       );
       setStringifiedCookie('cart', itemsInCookies);
     }

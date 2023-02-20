@@ -1,6 +1,5 @@
 import { cookies } from 'next/headers';
-import { getShop, shop } from '../../database/shop';
-import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
+import { getShop } from '../../database/shop';
 
 export default async function TotalPrice() {
   const itemsCookie = cookies().get('cart');
@@ -14,16 +13,16 @@ export default async function TotalPrice() {
 
   console.log('shop', shop);
 
-  //adding property 'amount' to every item
+  // adding property 'amount' to every item
   const itemsWithAmount = shop.map((item) => {
     const itemWithAmount = { ...item, amount: 0 };
 
-    //read the cookie to find the item
+    // read the cookie to find the item
     const itemInCookie = itemsCookieParsed.find(
       (itemObject) => item.id === itemObject.id,
     );
 
-    //if find the item, update the amount
+    // if find the item, update the amount
     if (itemInCookie) {
       itemWithAmount.amount = itemInCookie.amount;
     }
@@ -42,8 +41,6 @@ export default async function TotalPrice() {
     priceSum.push(item.price * item.amount),
   );
   console.log(priceSum);
-
-  // const totalPrice = priceSum.reduce((partialSum, a) => partialSum + a, 0);
 
   return (
     <h3>
