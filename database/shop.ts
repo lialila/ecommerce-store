@@ -1,5 +1,4 @@
 import { cache } from 'react';
-// import fs from 'node:fs';
 import { sql } from './connect';
 
 // export const shop1 = [
@@ -68,7 +67,6 @@ export type Item = {
   description: string | null;
 };
 // get all items in shop
-
 export const getShop = cache(async () => {
   const shop = await sql<Item[]>`
 SELECT * FROM shop
@@ -77,7 +75,6 @@ SELECT * FROM shop
 });
 
 // get a single item
-
 export const getItem = cache(async (id: number) => {
   const [item] = await sql<Item[]>`
   SELECT * FROM shop

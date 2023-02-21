@@ -11,5 +11,5 @@ SELECT * FROM shop
   `,
 );
 
-//to disconnect after getting the database2
+// to disconnect after getting the database2
 await sql.end();
