@@ -1,4 +1,8 @@
 .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   h1 {
     padding-bottom: 5vw;
     text-align: center;
@@ -14,4 +18,44 @@
     margin-top: 5vw;
     margin-bottom: 0;
   }
+}
+.form {
+  display: inline-block;
+  justify-content: flex-start;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 10px;
+  line-height: 2rem;
+  flex-direction: row;
+  // backdrop-filter: blur(18.2px);
+  // -webkit-backdrop-filter: blur(18.2px);
+  background: rgba(203, 198, 198, 0.4);
+  font-family: 'Montserrat', sans-serif;
+  text-transform: lowercase;
+  font-weight: 400;
+  font-size: 1rem;
+
+  letter-spacing: 0.2vw;
+  input {
+    background-color: rgba(185, 179, 179, 0);
+    border: solid 1.2px rgb(70, 65, 131);
+    border-radius: 3px;
+    //width: 3rem;
+  }
+  button {
+    color: white;
+    border-radius: 3px;
+    background-color: rgb(70, 65, 131);
+    height: 25px;
+  }
+  button:hover {
+    background-color: rgb(99, 89, 207);
+    border: none;
+  }
+}
+.totalPrice {
+  font-family: 'Monoton', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
 }

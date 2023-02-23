@@ -24,7 +24,7 @@
 .card {
   backdrop-filter: blur(18.2px);
   -webkit-backdrop-filter: blur(18.2px);
-  background: rgba(203, 198, 198, 0.7);
+  background: rgba(203, 198, 198, 0.3);
 
   // padding: 8px;
   margin: 5%;
@@ -46,6 +46,8 @@
 }
 .card:hover {
   //margin: 2px;
+  background: rgba(203, 198, 198, 0.8);
+
   padding: 2px;
   box-shadow: 7px 7px 7px #445881;
 }

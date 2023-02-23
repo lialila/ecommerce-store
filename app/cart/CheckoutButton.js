@@ -6,7 +6,7 @@ export default function CheckoutButton() {
   const router = useRouter();
 
   return (
-    <Link href="../checkout">
+    <Link href="/../checkout">
       <button
         onClick={(e) => {
           e.preventDefault();

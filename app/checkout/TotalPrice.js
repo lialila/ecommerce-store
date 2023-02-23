@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers';
 import { getShop } from '../../database/shop';
+import styles from './page.module.scss';
 
 export default async function TotalPrice() {
   const itemsCookie = cookies().get('cart');
@@ -43,7 +44,7 @@ export default async function TotalPrice() {
   console.log(priceSum);
 
   return (
-    <h3>
+    <h3 className={styles.totalPrice}>
       Total Price: {priceSum.reduce((partialSum, a) => partialSum + a, 0)} €
     </h3>
   );

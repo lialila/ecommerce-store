@@ -48,7 +48,7 @@ export default async function CartPage() {
   return (
     <main className={styles.mainmain}>
       <h1 className={styles.h1}>CART</h1>
-      <div className={styles.main}>
+      <div>
         {itemsWithAmountOverNull.map((item) => {
           priceSum.push(item.price * item.amount);
 
@@ -65,19 +65,22 @@ export default async function CartPage() {
                   {item.amount}
                 </p>
                 <p>Price per item: {item.price}€</p>
-                <RemoveButton item={item} />
               </div>
+              <RemoveButton item={item} className={styles.removeButton} />
             </div>
           );
         })}
       </div>
-      <h2>Nice choice!</h2>
 
-      <h3>
-        Total price: {priceSum.reduce((partialSum, a) => partialSum + a, 0)} €
-      </h3>
-      <CheckoutButton />
-      {/* should send to checkout page */}
+      <div className={styles.checkoutAndPrice}>
+        <h2> Nice choice! </h2>
+        <h2>
+          Total price:
+          {priceSum.reduce((partialSum, a) => partialSum + a, 0)} €
+        </h2>
+        <CheckoutButton />
+        {/* should send to checkout page */}
+      </div>
     </main>
   );
 }

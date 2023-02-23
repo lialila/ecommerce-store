@@ -3,4 +3,62 @@
 }
 .main {
   display: flex;
+  font-family: 'Montserrat', sans-serif;
+
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.2vw;
+  }
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    // font-size: 12px;
+    letter-spacing: 0.2vw;
+  }
+  p {
+    font-family: 'Montserrat', sans-serif;
+    // text-transform: lowercase;
+    font-weight: 400;
+    font-size: 12px;
+    // font-size: 12px;
+    letter-spacing: 0.2vw;
+  }
+}
+.form {
+  font-family: 'Montserrat', sans-serif;
+  label {
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+  input {
+    background-color: rgba(185, 179, 179, 0);
+    border: solid 1.2px rgb(70, 65, 131);
+    border-radius: 3px;
+    width: 36px;
+  }
+  button:first-of-type {
+    background-color: rgba(185, 179, 179, 0);
+    border-radius: 3px;
+    border: solid 1.2px rgb(70, 65, 131);
+  }
+  button:first-of-type:hover {
+    background-color: rgba(185, 179, 179, 0.7);
+    border: none;
+  }
+  button:last-of-type {
+    background-color: rgb(70, 65, 131);
+    border-radius: 3px;
+    border: solid 1.2px rgb(70, 65, 131);
+  }
+  button:last-of-type:hover {
+    background-color: rgba(185, 179, 179, 0);
+    border-radius: 3px;
+    border: solid 1.2px rgb(70, 65, 131);
+  }
 }

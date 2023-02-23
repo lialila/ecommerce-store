@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies.ts';
-import styles from './removeButton.module.scss';
+import styles from './page.module.scss';
 
 export default function RemoveButton(props) {
   const router = useRouter();
