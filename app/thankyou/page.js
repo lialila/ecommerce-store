@@ -1,4 +1,4 @@
-// import styles from './page.module.scss';
+import styles from './page.module.scss';
 
 export const metadata = {
   title: {
@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function ThankYouPage() {
   return (
-    <main>
+    <main className={styles.main}>
       <h3> Thank you for your order!</h3>
     </main>
   );

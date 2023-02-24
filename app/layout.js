@@ -22,9 +22,9 @@ export default function RootLayout({ children }) {
               </button>
             </div>
             <div className={styles.right}>
-              <button>
+              {/* <button>
                 <Link href="/contact">CONTACT</Link>
-              </button>
+              </button> */}
             </div>
             <div>
               <TotalAmount />
